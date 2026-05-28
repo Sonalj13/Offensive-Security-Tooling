@@ -1,0 +1,14 @@
+#!/usr/bin/python3
+import socket
+target_ip='192.168.29.1'
+print(f"[*]Commencing scan on target: {target_ip}")
+for port in range (1,1025):
+    s=socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    s.settimeout(0.5)
+    result = s.connect_ex((target_ip, port))
+    if result == 0:
+         print(f"[+] Port {port} is OPEN")
+    s.close()
+
+
+
