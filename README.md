@@ -8,7 +8,9 @@ This repository contains custom offensive security tools and network reconnaissa
 * **NAT Routing Analysis:** Mapped how internal subnet IP addresses are masked by host machines using Network Address Translation (NAT) before routing to the wider internet.
 
 ## Python Offensive Tooling
-* **BleedScan (TCP Connect Scanner):** Developed a custom, lightweight Python port scanner utilizing the raw `socket` library. It is designed to automate the enumeration of external attack surfaces (like identifying open web or DNS servers) without relying on noisy, heavy frameworks.
+* **BleedScan (v1 & v2):** Developed custom, lightweight Python TCP scanners utilizing the raw `socket` library. 
+  * **Version 1:** Automates the enumeration of external attack surfaces by mapping open network ports.
+  * **Version 2:** Upgraded to perform active service enumeration (Banner Grabbing). Implements `try/except` error handling and uses `socket.recv()` to extract and decode service versions from open ports, transitioning the tool from mere discovery to actionable vulnerability targeting.
 
 ## Rust Systems Engineering
 * **Memory-Safe Target Acquisition:** Compiled a foundational command-line utility in Rust. This tool demonstrates secure parameter handling and execution. Rust was specifically chosen to prevent the memory leaks and buffer overflow vulnerabilities inherent in traditional C/C++ malware and security tooling.
